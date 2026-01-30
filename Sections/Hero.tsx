@@ -1,4 +1,5 @@
 import { LogoCarousel } from "../components/LogoCarousel";
+import ParticleIcon from "../components/ParticleIcon";
 import { Service } from "./Service";
 import { Industries } from "./Industries";
 import { CTA } from "./CTA";
@@ -133,29 +134,10 @@ export const ReviewBadges = (props: ReviewBadgesProps) => {
 };
 export const HeroImage = () => {
     return (
-        <div className="relative   flex flex-col grow justify-center min-h-0 min-w-0 w-full md:min-h-[auto] md:min-w-[auto] animate-fade-in opacity-0" style={{ animationDelay: "0.6s" }}>
-            <div className="  min-h-px min-w-0 md:min-w-[auto]">
-                <div className="  h-[800px]">
-                    <div className=" ">
-                        <div className=" "></div>
-                    </div>
-                    <img
-                        src="https://c.animaapp.com/mkz11li0RsXIrT/assets/image-1.png"
-                        className="aspect-[auto_0_/_0]   h-full max-w-full w-full mb-[15px]"
-                    />
-                    <img
-                        src="https://c.animaapp.com/mkz11li0RsXIrT/assets/image-2.png"
-                        className="aspect-[auto_400_/_498]   hidden max-w-full mb-[15px]"
-                    />
-                    <img
-                        src="https://c.animaapp.com/mkz11li0RsXIrT/assets/image-3.png"
-                        className="aspect-[auto_300_/_150]   hidden max-w-full mb-[15px]"
-                    />
-                    <img
-                        src="https://c.animaapp.com/mkz11li0RsXIrT/assets/image-3.png"
-                        className="aspect-[auto_300_/_150]   hidden max-w-full mb-[15px]"
-                    />
-                    <p className=" "></p>
+        <div className="relative flex flex-col grow justify-center min-h-0 min-w-0 w-full md:min-h-[auto] md:min-w-[auto] animate-fade-in opacity-0" style={{ animationDelay: "0.6s" }}>
+            <div className="min-h-px min-w-0 md:min-w-[auto] h-full flex items-center justify-center">
+                <div className="w-full h-[600px] md:h-[700px] lg:h-[800px]">
+                    <ParticleIcon />
                 </div>
             </div>
         </div>
