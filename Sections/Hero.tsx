@@ -166,7 +166,7 @@ export const Hero = () => {
         <div className="relative bg-black grow z-[11] md:z-10 overflow-hidden">
             <div
                 role="main"
-                className="relative  w-auto mx-auto px-0 md:max-w-[2000px] md:w-full border border-red-600 border-2"
+                className="relative  w-auto mx-auto px-0 md:max-w-[2000px] md:w-full"
             >
                 <div className="relative  ">
                     <div className="absolute   h-full w-full left-0 top-0">
