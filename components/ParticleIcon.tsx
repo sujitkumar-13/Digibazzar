@@ -103,10 +103,10 @@ const ParticleIcon: React.FC = () => {
             mCtx.fillText('B', mCX + logoW / 4, mCY + 4 * innerScale);
 
             const imageData = mCtx.getImageData(0, 0, maskW, maskH).data;
-            const scanStep = 2.5;
+            const scanStep = 1.6; // Much higher density
 
             // Responsive Scaling Factor for the whole logo relative to screen
-            const displayScale = Math.min(canvas.width / 600, canvas.height / 500, 1.2);
+            const displayScale = Math.min(canvas.width / 500, canvas.height / 400, 1.3);
 
             for (let y = 0; y < maskH; y += scanStep) {
                 for (let x = 0; x < maskW; x += scanStep) {
@@ -117,18 +117,19 @@ const ParticleIcon: React.FC = () => {
                         const originY = centerY + (y - mCY) * displayScale;
 
                         particles.current.push({
-                            x: originX,
-                            y: originY,
+                            // Start totally scattered across the whole box
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
                             originX: originX,
                             originY: originY,
                             baseColor: '#FFD74B',
                             size: Math.random() * 1.5 + 0.5,
-                            ease: 0.04 + Math.random() * 0.04,
-                            opacity: Math.random() * 0.7 + 0.3,
-                            vx: 0,
-                            vy: 0,
+                            ease: 0.015 + Math.random() * 0.02, // Slower coalesce for dramatic entrance
+                            opacity: 0,
+                            vx: (Math.random() - 0.5) * 60, // High velocity explosion
+                            vy: (Math.random() - 0.5) * 60,
                             isAmbient: false,
-                            friction: 0.91
+                            friction: 0.92
                         });
                     }
                 }
@@ -195,7 +196,9 @@ const ParticleIcon: React.FC = () => {
                     } else {
                         p.vx += (p.originX - p.x) * p.ease;
                         p.vy += (p.originY - p.y) * p.ease;
-                        p.opacity = Math.max(p.opacity - 0.01, 0.7);
+                        // Smoothly transition opacity to baseline
+                        if (p.opacity < 0.7) p.opacity += 0.008;
+                        else p.opacity = Math.max(p.opacity - 0.01, 0.7);
                     }
 
                     p.vx *= p.friction;
