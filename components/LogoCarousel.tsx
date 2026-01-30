@@ -72,37 +72,26 @@ const LOGOS = [
 ];
 
 export const LogoCarousel = () => {
+    // Double the logos for seamless loop
+    const doubledLogos = [...LOGOS, ...LOGOS];
+
     return (
-        <div className="relative w-full overflow-hidden">
-            <div className="relative  max-w-[88%] w-auto mx-auto px-0 md:max-w-[2000px] md:w-full md:px-[70px]">
-
-                <div className="relative  h-[100px]">
-                    <div className="absolute  flex h-full translate-x-[-508.002px] w-full left-0 md:translate-x-[-172.938px]">
-                        {LOGOS.map((logo, index) => (
-                            <div
-                                key={index}
-                                className={`absolute h-2.5 ${index > 0 ? `translate-x-[${index * 100}.0%]` : ""} w-[33.3333%] p-[50px] left-0 md:h-[89.234px] md:w-[16.6%]`}
-                            >
-                                <div className="h-full">
-                                    <div className="flex flex-col h-full justify-center">
-                                        <div className="leading-[0px]">
-                                            <div className={`h-full ${logo.maxWidth}`}>
-
-                                                <img
-                                                    src={logo.src}
-                                                    alt={logo.alt || ""}
-                                                    className={`relative ${logo.aspect} ${logo.isPlaceholder ? "h-auto min-h-px min-w-px opacity-100 w-full md:h-[74.3785px] md:opacity-0 md:w-[89.2344px]" : "min-h-px min-w-px w-full"}`}
-                                                />
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+        <div className="relative w-full overflow-hidden py-10">
+            <div className="flex w-fit animate-marquee whitespace-nowrap">
+                {doubledLogos.map((logo, index) => (
+                    <div
+                        key={index}
+                        className="flex-shrink-0 flex items-center justify-center px-8 md:px-12"
+                    >
+                        <div className={`${logo.maxWidth} w-full`}>
+                            <img
+                                src={logo.src}
+                                alt={logo.alt || ""}
+                                className={`${logo.aspect} w-full object-contain ${logo.isPlaceholder ? "opacity-50 grayscale" : ""}`}
+                            />
+                        </div>
                     </div>
-                </div>
-
+                ))}
             </div>
         </div>
     );
