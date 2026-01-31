@@ -9,8 +9,7 @@ export const Navbar = () => {
     const MENU_LINKS = [
         { label: "Home", href: "#home" },
         { label: "About", href: "#about" },
-        { label: "Services", href: "#services", subMenu: true },
-        // { label: "Industries", subMenu: true },
+        { label: "Services", href: "#services" },
         { label: "Case Studies", href: "#case-studies" },
         { label: "Blog", href: "#blog" },
         { label: "Contact", href: "#contact" },
@@ -93,7 +92,7 @@ export const Navbar = () => {
                 {/* DesktopMenu */}
                 <nav className="hidden md:flex items-center">
                     <ul className="flex list-none items-center space-x-8">
-                        {MENU_LINKS.map(({ label, href, subMenu }) => (
+                        {MENU_LINKS.map(({ label, href }) => (
                             <li key={label} className="relative group">
                                 <a
                                     href={href}
@@ -102,26 +101,6 @@ export const Navbar = () => {
                                 >
                                     <span className="relative">{label}</span>
                                 </a>
-                                {subMenu && (
-                                    <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 border border-white/10 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
-                                        <div className="space-y-2">
-                                            <button 
-                                                onClick={(e) => {
-                                                    const target = document.getElementById("services");
-                                                    if (target) {
-                                                        const offset = 80;
-                                                        const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                                                        window.scrollTo({ top: pos, behavior: "smooth" });
-                                                    }
-                                                }}
-                                                className="block w-full text-left text-white/70 hover:text-amber-300 text-xs uppercase tracking-wider"
-                                            >
-                                                Services
-                                            </button>
-                                            <a href="#" className="block text-white/70 hover:text-amber-300 text-xs uppercase tracking-wider">Pricing</a>
-                                        </div>
-                                    </div>
-                                )}
                             </li>
                         ))}
                     </ul>
