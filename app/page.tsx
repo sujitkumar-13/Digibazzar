@@ -1,13 +1,13 @@
 import { Navbar } from "../Sections/Navbar";
-import { Hero } from "../Sections/Hero";
-import { Footer } from "../Sections/Footer";
+import { Main } from "@/Sections/Main";
+import { Footer } from "@/Sections/Footer";
 import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Navbar />
-      <Hero />
+      <Main />
       <Footer />
       <WhatsAppFloatingButton />
     </main>

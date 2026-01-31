@@ -37,8 +37,8 @@ export const Footer = ({ className }: FooterProps) => {
 
     return (
         <footer className={`bg-black text-white pt-16 pb-8 text-base ${className}`}>
-            <div className="w-full mx-auto px-8 md:px-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+            <div className="w-full mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16 px-8 md:px-16">
                     {/* Branding */}
                     <div className="flex flex-col space-y-6">
                         <motion.a
@@ -48,7 +48,7 @@ export const Footer = ({ className }: FooterProps) => {
                             <img
                                 src="/logo.webp"
                                 alt="The Digibazzar"
-                                className="aspect-[399/213] block max-h-12 w-auto"
+                                className="aspect-[399/213] block max-h-16 w-auto"
                             />
                         </motion.a>
                         <p className="text-gray-400 leading-relaxed text-sm max-w-xs">
@@ -115,31 +115,22 @@ export const Footer = ({ className }: FooterProps) => {
                                 </a>
                             </div>
                         </div>
+                        {/* Payment Icons moved here */}
+                        <div className="flex flex-wrap gap-2 pt-4">
+                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/bitcoin-btc-logo-2.png" alt="Bitcoin" className="h-5 w-auto" />
+                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/monero-xmr-logo.png" alt="Monero" className="h-5 w-auto" />
+                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/ethereum-eth-logo-2.png" alt="Ethereum" className="h-5 w-auto" />
+                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/tether-usdt-logo-2.png" alt="Tether" className="h-5 w-auto" />
+                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/usd-coin-usdc-logo-2.png" alt="USD Coin" className="h-5 w-auto" />
+                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/visa-new-png.png" alt="Visa" className="h-5 w-auto" />
+                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/mastercard-icon-small.png" alt="Mastercard" className="h-5 w-auto" />
+                        </div>
                     </div>
                 </div>
 
-                {/* Bottom Section */}
-                <div className="border-t border-gray-800 pt-8 mt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-                        <div className="flex gap-2">
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/bitcoin-btc-logo-2.png" alt="Bitcoin" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/monero-xmr-logo.png" alt="Monero" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/ethereum-eth-logo-2.png" alt="Ethereum" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/tether-usdt-logo-2.png" alt="Tether" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/usd-coin-usdc-logo-2.png" alt="USD Coin" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/visa-new-png.png" alt="Visa" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/mastercard-icon-small.png" alt="Mastercard" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/swift-logo-60.png" alt="Swift" className="h-6 w-auto" />
-                            <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/direct-debit-icon-small-white-cons.png" alt="Direct Debit" className="h-6 w-auto" />
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs border-t border-white/5 pt-8">
-                        <div className="text-center md:text-left space-y-2">
-                            <p>© 2026 Digibazzar Marketing. All Rights Reserved.</p>
-                            <p>Registered Address: 27 Old Gloucester Street, Varanasi, Uttar Pradesh, India. | <a href="/sitemap/" className="hover:text-amber-400 underline decoration-white/10">Sitemap</a></p>
-                        </div>
-                    </div>
+                <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs border-t border-white/20 pt-8 px-8 md:px-16 gap-4 text-center md:text-left">
+                    <p>© 2026 Digibazzar Marketing. All Rights Reserved.</p>
+                    <p>Registered Address: 27 Old Gloucester Street, Varanasi, Uttar Pradesh, India. | <a href="/sitemap/" className="hover:text-amber-400 underline decoration-white/10">Sitemap</a></p>
                 </div>
             </div>
         </footer>
