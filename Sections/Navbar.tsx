@@ -20,7 +20,7 @@ export const Navbar = () => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <header className="fixed top-0 left-0 w-full bg-black/95 backdrop-blur-md z-[100000] h-20 flex items-center border-b border-white/5">
+        <header className={`fixed top-0 left-0 w-full transition-colors duration-300 z-[100000] h-20 flex items-center border-b border-white/5 ${isMenuOpen ? 'bg-black' : 'bg-black/95 backdrop-blur-md'}`}>
             <div className="w-full px-6 md:px-10 h-full flex items-center justify-between relative z-50">
                 {/* NavbarLogo */}
                 <motion.a
@@ -102,26 +102,64 @@ export const Navbar = () => {
                         initial={{ y: "-100%" }}
                         animate={{ y: 0 }}
                         exit={{ y: "-100%" }}
-                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="fixed inset-0 bg-black z-40 md:hidden flex flex-col pt-24"
+                        transition={{ duration: 0.5, ease: [0.19, 1, 0.22, 1] }}
+                        className="fixed inset-0 z-[90] md:hidden flex flex-col pt-24"
+                        style={{ backgroundColor: '#000000' }}
                     >
-                        <div className="flex-grow flex flex-col items-center justify-center space-y-6 px-10 text-center bg-black border">
+                        {/* Header inside Menu (to match ref image header layout) */}
+                        <div className="absolute top-0 left-0 w-full h-20 px-6 flex items-center justify-between">
+                            <img
+                                src="/logo.webp"
+                                alt="Bird"
+                                className="h-8 w-auto invert brightness-0"
+                            />
+                            <div className="flex items-center gap-4">
+                                <a
+                                    href="/"
+                                    className="bg-amber-400 text-black px-4 py-2 rounded-md text-[10px] font-black uppercase tracking-wider"
+                                >
+                                    Get A Quote
+                                </a>
+                                <button
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="text-white p-2"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="flex-grow flex flex-col items-center justify-center space-y-2 px-6 text-center">
                             {MENU_LINKS.map(({ label, href }, idx) => (
                                 <motion.div
                                     key={label}
                                     initial={{ opacity: 0, y: 15 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 + idx * 0.04 }}
+                                    transition={{ delay: 0.2 + idx * 0.05 }}
                                 >
                                     <a
                                         href={href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="text-white text-3xl font-black uppercase tracking-tighter hover:text-amber-400 transition-colors"
+                                        className="text-white text-[2.75rem] leading-[1.1] font-black uppercase tracking-tighter hover:text-amber-400 transition-colors"
                                     >
                                         {label}
                                     </a>
                                 </motion.div>
                             ))}
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 15 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.6 }}
+                                className="pt-6"
+                            >
+                                <button className="flex items-center gap-3 text-white border-b-2 border-amber-400 pb-1 text-3xl font-black uppercase tracking-widest">
+                                    <img src="https://flagcdn.com/w40/gb.png" alt="UK" className="w-8" />
+                                    EN (UK)
+                                </button>
+                            </motion.div>
                         </div>
 
                         {/* Mobile Menu Footer */}
@@ -129,9 +167,9 @@ export const Navbar = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.8 }}
-                            className="p-10 text-center"
+                            className="p-8 pb-10 text-center"
                         >
-                            <p className="text-white/40 text-[10px] leading-loose uppercase tracking-[0.2em] max-w-[340px] mx-auto font-medium">
+                            <p className="text-white/40 text-[10px] leading-relaxed uppercase tracking-[0.2em] max-w-[320px] mx-auto font-medium">
                                 © Bird Marketing, Bird Marketing Limited - Company No. 08051880 - VAT Reg No. GB204642821
                                 <br />
                                 Registered in England & Wales. Registered Office: Sovereign House, Arisdale Avenue, South Ockendon, Essex, RM15 5TT
