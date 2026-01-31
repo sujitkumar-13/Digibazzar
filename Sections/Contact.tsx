@@ -46,7 +46,7 @@ export const Contact = () => {
                     {[...Array(8)].map((_, i) => (
                         <span
                             key={i}
-                            className="text-[12vw] font-bold uppercase tracking-tighter"
+                            className="text-[10vw] font-bold uppercase tracking-tighter"
                             style={{
                                 WebkitTextStroke: "2px white",
                                 color: "transparent",

@@ -1,184 +1,119 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export type FooterProps = {
-    variant?: string;
-    logoUrl?: string;
-    logoAlt?: string;
-    description?: string;
-    ctaText?: string;
-    ctaUrl?: string;
-    googleReviewImageUrl?: string;
-    googleReviewImageAlt?: string;
-    trustpilotImageUrl?: string;
-    trustpilotImageAlt?: string;
-    locations?: Array<{
-        name: string;
-        url?: string;
-        address: React.ReactNode;
-        phone: string;
-        phoneUrl: string;
-        email: string;
-        emailUrl: string;
-    }>;
-    quickLinks?: Array<{
-        text: string;
-        url: string;
-    }>;
-    careersTitle?: string;
-    careersDescription?: string;
-    careersLinkText?: string;
-    careersLinkUrl?: string;
-    supportTitle?: string;
-    supportDescription?: React.ReactNode;
-    supportEmail?: string;
-    supportEmailUrl?: string;
-    legalLinks?: Array<{
-        text: string;
-        url: string;
-    }>;
-    paymentIcons?: Array<{
-        src: string;
-        alt: string;
-        aspectClass?: string;
-    }>;
-    copyrightText?: React.ReactNode;
-    sitemapUrl?: string;
-    socialLinks?: Array<{
-        url: string;
-        iconClass: string;
-    }>;
+    className?: string;
 };
 
-export const Footer = (_props: FooterProps) => {
+const QUICK_LINKS = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Case Studies", href: "#case-studies" },
+    { label: "Blog", href: "#blog" },
+    { label: "Contact", href: "#contact" },
+];
+
+export const Footer = ({ className }: FooterProps) => {
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            const targetId = href.replace("#", "");
+            const elem = document.getElementById(targetId);
+            if (elem) {
+                const offset = 80;
+                const elementPosition = elem.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+    };
+
     return (
-        <footer className="bg-black text-white pt-16 pb-8 text-base">
+        <footer className={`bg-black text-white pt-16 pb-8 text-base ${className}`}>
             <div className="w-full mx-auto px-8 md:px-16">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
-                    {/* Column 1: Branding & CTA */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                    {/* Branding */}
                     <div className="flex flex-col space-y-6">
                         <motion.a
                             href="/"
-                            className="text-black items-center bg-black flex grow justify-center min-h-[auto] min-w-[auto] text-center ml-[30px] mr-[82px] py-1.5 md:py-2.5 rounded-[10px] md:[align-items:normal] md:block md:grow-0 md:justify-normal md:min-h-0 md:min-w-0 md:text-left md:mx-0 hover:shadow-lg transition-shadow duration-300"
+                            className="flex items-center"
                         >
                             <img
                                 src="/logo.webp"
                                 alt="The Digibazzar"
-                                className="aspect-[399/213] block max-h-[50px] md:max-h-16 w-auto min-h-[auto] min-w-[auto] text-center mx-0 md:inline md:min-h-0 md:min-w-0 md:text-left md:mx-4"
+                                className="aspect-[399/213] block max-h-12 w-auto"
                             />
                         </motion.a>
-                        <p className="text-gray-300 leading-relaxed text-sm">
-                            A multi award winning digital agency based in the India. With a distinct offering in Technical Web, Digital Marketing and Creative.
+                        <p className="text-gray-400 leading-relaxed text-sm max-w-xs">
+                            A multi award winning digital agency based in India. With a distinct offering in Technical Web, Digital Marketing and Creative.
                         </p>
+                    </div>
 
-                        <div className="pt-4">
-                            <h4 className="text-lg mb-1">Interested in working with us?</h4>
-                            <a href="/" className="text-lg underline hover:text-gray-300 decoration-1">
-                                Start a Project
-                            </a>
-                        </div>
+                    {/* Careers */}
+                    <div className="flex flex-col space-y-4">
+                        <h3 className="uppercase font-bold tracking-wider text-gray-400 text-sm">Careers</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                            Looking for talented people to join the team. Scan our careers page to find out about working for us.
+                        </p>
+                        <a href="#contact" onClick={(e) => handleLinkClick(e, "#contact")} className="text-amber-400 text-sm font-semibold hover:underline">Join the flock &rarr;</a>
+                    </div>
 
-                        <div className="flex gap-4 pt-4">
-                            <img
-                                src="https://c.animaapp.com/mkz11li0RsXIrT/assets/google-reviews-1.png"
-                                alt="Google Reviews"
-                                className="h-12 w-auto object-contain"
-                            />
-                            <img
-                                src="https://c.animaapp.com/mkz11li0RsXIrT/assets/trustpilot-bird3x.png"
-                                alt="Trustpilot Reviews"
-                                className="h-12 w-auto object-contain"
-                            />
+                    {/* Support */}
+                    <div className="flex flex-col space-y-4">
+                        <h3 className="uppercase font-bold tracking-wider text-gray-400 text-sm">Need Support?</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                            On our support plan? feel free to submit a ticket or give us a call during business hours.
+                        </p>
+                        <p className="text-xs text-gray-500">09.00 am – 17.00 pm</p>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div className="flex flex-col space-y-4">
+                        <h3 className="uppercase font-bold tracking-wider text-gray-400 text-sm">Quick Links</h3>
+                        <div className="flex flex-col space-y-2">
+                            {QUICK_LINKS.map((link) => (
+                                <a
+                                    key={link.label}
+                                    href={link.href}
+                                    onClick={(e) => handleLinkClick(e, link.href)}
+                                    className="text-gray-400 text-sm hover:text-amber-400 transition-colors"
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Column 2: London & Careers */}
-                    <div className="flex flex-col space-y-12">
-                        <div>
-                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">India</h3>
-                            <address className="not-italic text-gray-300 mb-4 text-sm leading-relaxed">
-                                13 Austin Friars,<br />
-                                India,<br />
-                                EC2N 2HE
-                            </address>
-                            <div className="flex flex-col space-y-1 text-sm">
-                                <a href="tel:+442083381206" className="hover:text-white dark:text-gray-300">+91 7524057749</a>
-                                <a href="mailto:thedigibazzar@gmail.com" className="hover:text-white dark:text-gray-300 underline">thedigibazzar@gmail.com</a>
+                    {/* Contact Us */}
+                    <div className="flex flex-col space-y-4">
+                        <h3 className="uppercase font-bold tracking-wider text-gray-400 text-sm">Contact Us</h3>
+                        <div className="flex flex-col space-y-4">
+                            <div className="flex items-start gap-3">
+                                <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                                <address className="not-italic text-sm text-gray-400 leading-relaxed">
+                                    27 Old Gloucester Street,<br />
+                                    Varanasi, Uttar Pradesh, India
+                                </address>
                             </div>
-                        </div>
-
-                        <div>
-                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">Careers</h3>
-                            <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                                We are always looking for talented people to join the team. Scan our careers page to find out about working for us and see if there is an opportunity to become part of the flock.
-                            </p>
-                            <a href="/" className="underline hover:text-white text-sm">Careers</a>
-                        </div>
-                    </div>
-
-                    {/* Column 3: Essex & Support */}
-                    <div className="flex flex-col space-y-12">
-                        <div>
-                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">Essex</h3>
-                            <address className="not-italic text-gray-300 mb-4 text-sm leading-relaxed">
-                                128a High Street,<br />
-                                Billericay, Essex,<br />
-                                CM12 9XE
-                            </address>
-                            <div className="flex flex-col space-y-1 text-sm">
-                                <a href="tel:7524057749" className="hover:text-white dark:text-gray-300">+91 7524057749</a>
-                                <a href="mailto:thedigibazzar@gmail.com" className="hover:text-white dark:text-gray-300 underline">thedigibazzar@gmail.com</a>
+                            <div className="flex items-center gap-3">
+                                <Phone className="w-5 h-5 text-amber-400 shrink-0" />
+                                <a href="tel:+917524057749" className="text-sm text-gray-400 hover:text-white transition-colors">
+                                    +91 7524057749
+                                </a>
                             </div>
-                        </div>
-
-                        <div>
-                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">Need Support?</h3>
-                            <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                                On our support plan? feel free to submit a ticket or give us a call during business hours.
-                            </p>
-                            <div className="flex items-center gap-2 mb-2 text-sm text-gray-300">
-                                <span className="text-amber-300">⏰</span> 09.00 am – 17.00 pm
+                            <div className="flex items-center gap-3">
+                                <Mail className="w-5 h-5 text-amber-400 shrink-0" />
+                                <a href="mailto:thedigibazzar@gmail.com" className="text-sm text-gray-400 hover:text-white transition-colors underline decoration-amber-400/30">
+                                    thedigibazzar@gmail.com
+                                </a>
                             </div>
-                            <a href="mailto:sthedigibazzar@gmail.com" className="underline hover:text-white text-sm">thedigibazzar@gmail.com</a>
-                        </div>
-                    </div>
-
-                    {/* Column 4: Glasgow & Legal */}
-                    <div className="flex flex-col space-y-12">
-                        <div>
-                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">Glasgow</h3>
-                            <address className="not-italic text-gray-300 mb-4 text-sm leading-relaxed">
-                                30 Stanley Street,<br />
-                                Glasgow,<br />
-                                G41 1JB
-                            </address>
-                            <div className="flex flex-col space-y-1 text-sm">
-                                <a href="tel:7524057749" className="hover:text-white dark:text-gray-300">+91 7524057749</a>
-                                <a href="mailto:thedigibazzar@gmail.com" className="hover:text-white dark:text-gray-300 underline">thedigibazzar@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">Legal</h3>
-                            <div className="flex flex-col space-y-2 text-gray-300 text-sm">
-                                <a href="/" className="hover:text-white">Terms & Conditions</a>
-                                <a href="https://www.nominet.uk/uk-domains/policies/" className="hover:text-white">Nominet Terms</a>
-                                <a href="/" className="hover:text-white">Privacy Policy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Column 5: Quick Links */}
-                    <div className="flex flex-col">
-                        <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">Quick Links</h3>
-                        <div className="flex flex-col space-y-2 text-gray-300 text-sm">
-                            <a href="/" className="hover:text-white">Nest</a>
-                            <a href="/" className="hover:text-white">Email Marketing</a>
-                            <a href="/" className="hover:text-white">Marketing Portal</a>
-                            <a href="/" className="hover:text-white">Digital Marketing Glossary</a>
-                            <a href="/" className="hover:text-white">Digital Marketing Agency London</a>
-                            <a href="/" className="hover:text-white">Digital Marketing Agency Essex</a>
                         </div>
                     </div>
                 </div>
@@ -186,9 +121,6 @@ export const Footer = (_props: FooterProps) => {
                 {/* Bottom Section */}
                 <div className="border-t border-gray-800 pt-8 mt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-                        <div className="mb-4 md:mb-0">
-                            <span className="font-bold text-lg">Home</span>
-                        </div>
                         <div className="flex gap-2">
                             <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/bitcoin-btc-logo-2.png" alt="Bitcoin" className="h-6 w-auto" />
                             <img src="https://c.animaapp.com/mkz11li0RsXIrT/assets/monero-xmr-logo.png" alt="Monero" className="h-6 w-auto" />
@@ -202,10 +134,10 @@ export const Footer = (_props: FooterProps) => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-                        <div className="mb-4 md:mb-0 text-center md:text-left">
-                            <p>© 2026 Digibuzzer Marketing. Digibuzzer Marketing Limited - Company No. 08051880 - VAT Reg No. GB204642831</p>
-                            <p className="mt-1">Registered Address: 27 Old Gloucester Street, Varanasi, Uttar Pradesh, India. - <a href="/sitemap/" className="underline hover:text-gray-300">Sitemap</a></p>
+                    <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs border-t border-white/5 pt-8">
+                        <div className="text-center md:text-left space-y-2">
+                            <p>© 2026 Digibazzar Marketing. All Rights Reserved.</p>
+                            <p>Registered Address: 27 Old Gloucester Street, Varanasi, Uttar Pradesh, India. | <a href="/sitemap/" className="hover:text-amber-400 underline decoration-white/10">Sitemap</a></p>
                         </div>
                     </div>
                 </div>

@@ -1,33 +1,10 @@
-export type CaseStudiesSectionProps = {
-    variant: string;
-    sectionTitle?: string;
-    sectionSubtitle?: string;
-    sectionDescription?: string;
-    viewAllText?: string;
-    viewAllHref?: string;
-    filterText?: string;
-    filterLinks?: Array<{
-        text: string;
-        href: string;
-    }>;
-    caseStudies?: Array<{
-        title: string;
-        href: string;
-        imageUrl: string;
-        imageAlt: string;
-        ariaLabel: string;
-    }>;
+export type CaseStudiesProps = {
+    className?: string;
 };
 
-export const CaseStudies = (props: CaseStudiesSectionProps) => {
-    if (props.variant === "empty") {
-        return (
-            <div className=" caret-transparent absolute bg-white content-['_'] h-full opacity-50 w-full z-[3] left-0 top-0"></div>
-        );
-    }
-
+export const CaseStudies = ({ className }: CaseStudiesProps) => {
     return (
-        <div className="relative bg-cover  w-full py-[50px] md:py-[125px] "  id="case-studies">
+        <div className={`relative bg-cover w-full py-[50px] md:py-[125px] ${className || ""}`} id="case-studies">
             <div className="absolute   h-full w-full left-0 top-0">
                 <div className="absolute   h-full w-full z-[1] overflow-hidden left-0 top-0">
                     <div className="absolute bg-white bg-[url('https://c.animaapp.com/mkz11li0RsXIrT/assets/Bird-Marketing-birds-bg-test3-19.svg')] bg-no-repeat bg-cover   h-full w-full bg-center left-0 top-0"></div>

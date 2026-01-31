@@ -239,7 +239,7 @@ export const Hero = () => {
                 <About />
                 {/* <Industries /> */}
                 <CTA />
-                <CaseStudies variant="" />
+                <CaseStudies />
                 <Blog />
                 <Team />
                 {/* <Location /> */}
