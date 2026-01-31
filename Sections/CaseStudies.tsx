@@ -27,7 +27,7 @@ export const CaseStudies = (props: CaseStudiesSectionProps) => {
     }
 
     return (
-        <div className="relative bg-cover  w-full py-[50px] md:py-[125px] ">
+        <div className="relative bg-cover  w-full py-[50px] md:py-[125px] "  id="case-studies">
             <div className="absolute   h-full w-full left-0 top-0">
                 <div className="absolute   h-full w-full z-[1] overflow-hidden left-0 top-0">
                     <div className="absolute bg-white bg-[url('https://c.animaapp.com/mkz11li0RsXIrT/assets/Bird-Marketing-birds-bg-test3-19.svg')] bg-no-repeat bg-cover   h-full w-full bg-center left-0 top-0"></div>

@@ -111,7 +111,7 @@ const services = [
 
 export const Service = () => {
     return (
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden" id="services">
             <div className="absolute h-full w-full left-0 top-0">
                 <div className="absolute h-full w-full z-[1] overflow-hidden left-0 top-0">
                     <div className="absolute bg-cover h-full w-full left-0 top-0"></div>

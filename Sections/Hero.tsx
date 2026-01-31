@@ -7,7 +7,7 @@ import { CTA } from "./CTA";
 import { CaseStudies } from "./CaseStudies";
 import { Blog } from "./Blog";
 import { Team } from "./Team";
-import { Location } from "./Location";
+// import { Location } from "./Location";
 import { Press } from "./Press";
 import { Content } from "./Content";
 import { AdditionalContent } from "./AdditionalContent";
@@ -146,7 +146,7 @@ export const HeroImage = () => {
 };
 export const Hero = () => {
     return (
-        <div className="relative bg-black grow z-[11] md:z-10">
+        <div className="relative bg-black grow z-[11] md:z-10" id="home">
             <div
                 role="main"
                 className="relative  w-auto mx-auto px-0 md:max-w-[2000px] md:w-full"
@@ -236,13 +236,13 @@ export const Hero = () => {
                     </div>
                 </div>
                 <Service />
-                <About/>
+                <About />
                 {/* <Industries /> */}
                 <CTA />
                 <CaseStudies variant="" />
                 <Blog />
                 <Team />
-                <Location />
+                {/* <Location /> */}
                 <Press />
                 <Content />
                 <AdditionalContent />

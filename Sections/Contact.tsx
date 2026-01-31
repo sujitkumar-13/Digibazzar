@@ -1,6 +1,6 @@
 export const Contact = () => {
     return (
-        <section className="bg-black text-white py-20 md:py-32 relative overflow-hidden">
+        <section className="bg-black text-white py-20 md:py-32 relative overflow-hidden"  id="contact">
             <div className="w-full px-6 md:px-16 lg:px-24 mb-24 md:mb-40">
                 <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
                     {/* Left Column */}

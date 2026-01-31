@@ -27,7 +27,7 @@ const BLOG_POSTS = [
 
 export const Blog = () => {
     return (
-        <section className="bg-black text-white py-20 md:py-32 relative overflow-hidden">
+        <section className="bg-black text-white py-20 md:py-32 relative overflow-hidden"  id="blog">
             <div className="w-full px-6 md:px-16 lg:px-24 mb-32">
                 <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-start">
                     {/* Left Column */}

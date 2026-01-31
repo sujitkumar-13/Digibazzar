@@ -7,17 +7,35 @@ export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const MENU_LINKS = [
-        { label: "Home", href: "/" },
-        { label: "About", href: "/" },
-        { label: "Services", subMenu: true },
+        { label: "Home", href: "#home" },
+        { label: "About", href: "#about" },
+        { label: "Services", href: "#services", subMenu: true },
         // { label: "Industries", subMenu: true },
-        { label: "Case Studies", href: "/case-studies/" },
-        { label: "Careers", href: "/careers/" },
-        { label: "Blog", href: "/" },
-        { label: "Contact", href: "/" },
+        { label: "Case Studies", href: "#case-studies" },
+        { label: "Blog", href: "#blog" },
+        { label: "Contact", href: "#contact" },
     ];
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith("#")) {
+            e.preventDefault();
+            const targetId = href.replace("#", "");
+            const elem = document.getElementById(targetId);
+            if (elem) {
+                const offset = 80; // Header height
+                const elementPosition = elem.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+            setIsMenuOpen(false);
+        }
+    };
 
     return (
         <header className={`fixed top-0 left-0 w-full transition-colors duration-300 z-[100000] h-20 flex items-center border-b border-white/5 ${isMenuOpen ? 'bg-black' : 'bg-black/95 backdrop-blur-md'}`}>
@@ -26,6 +44,7 @@ export const Navbar = () => {
                 <motion.a
                     href="/"
                     className="flex items-center"
+                    onClick={(e) => handleLinkClick(e, "#home")}
                 >
                     <div className="flex flex-col items-center">
                         <img
@@ -38,12 +57,21 @@ export const Navbar = () => {
 
                 {/* Mobile Controls (Visible only on mobile inside this header) */}
                 <div className="flex md:hidden items-center gap-4">
-                    <a
-                        href="/"
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const contactElem = document.getElementById("contact");
+                            if (contactElem) {
+                                const offset = 80;
+                                const elementPosition = contactElem.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                            }
+                        }}
                         className="bg-amber-400 text-black px-4 py-2 rounded-md text-[10px] font-black uppercase tracking-wider"
                     >
                         Get A Quote
-                    </a>
+                    </button>
                     <button
                         type="button"
                         aria-label="Toggle Menu"
@@ -69,6 +97,7 @@ export const Navbar = () => {
                             <li key={label} className="relative group">
                                 <a
                                     href={href}
+                                    onClick={(e) => handleLinkClick(e, href)}
                                     className="text-white text-sm font-semibold uppercase tracking-wider hover:text-amber-300 transition-colors"
                                 >
                                     <span className="relative">{label}</span>
@@ -76,7 +105,19 @@ export const Navbar = () => {
                                 {subMenu && (
                                     <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 border border-white/10 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-4">
                                         <div className="space-y-2">
-                                            <a href="#" className="block text-white/70 hover:text-amber-300 text-xs uppercase tracking-wider">Services</a>
+                                            <button 
+                                                onClick={(e) => {
+                                                    const target = document.getElementById("services");
+                                                    if (target) {
+                                                        const offset = 80;
+                                                        const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                                                        window.scrollTo({ top: pos, behavior: "smooth" });
+                                                    }
+                                                }}
+                                                className="block w-full text-left text-white/70 hover:text-amber-300 text-xs uppercase tracking-wider"
+                                            >
+                                                Services
+                                            </button>
                                             <a href="#" className="block text-white/70 hover:text-amber-300 text-xs uppercase tracking-wider">Pricing</a>
                                         </div>
                                     </div>
@@ -88,12 +129,20 @@ export const Navbar = () => {
 
                 {/* DesktopButtons */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <a
-                        href="/"
+                    <button
+                        onClick={() => {
+                            const contactElem = document.getElementById("contact");
+                            if (contactElem) {
+                                const offset = 80;
+                                const elementPosition = contactElem.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                            }
+                        }}
                         className="bg-amber-400 text-black px-6 py-2 rounded-md text-sm font-bold uppercase hover:bg-amber-500 transition-all font-black tracking-widest"
                     >
                         Get A Quote
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -117,7 +166,7 @@ export const Navbar = () => {
                                 >
                                     <a
                                         href={href}
-                                        onClick={() => setIsMenuOpen(false)}
+                                        onClick={(e) => handleLinkClick(e, href)}
                                         className="text-white text-[2.5rem] font-black uppercase tracking-tighter hover:text-amber-400 transition-colors"
                                     >
                                         {label}

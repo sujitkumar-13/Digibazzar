@@ -13,7 +13,7 @@ const PRESS_LOGOS = [
 
 export const Press = () => {
     return (
-        <section className="bg-white py-20 md:py-32 overflow-hidden border-t border-gray-100">
+        <section className="bg-white py-20 md:py-32 overflow-hidden ">
             <div className="w-full px-6 md:px-16 lg:px-24 mb-16">
                 <div className="max-w-4xl">
                     <h2 className="text-4xl md:text-6xl font-bold mb-6 text-black tracking-tight leading-tight">
