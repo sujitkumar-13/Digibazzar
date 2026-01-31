@@ -16,7 +16,7 @@ export const CTA = () => {
                         >
                             you’d like to achieve
                         </span>
-                        ? Are you ready to find out how Bird can help to{" "}
+                        ? Are you ready to find out how Digibazzar can help to{" "}
                         <span
                             className="text-base bg-[linear-gradient(to_right,rgb(255,255,255)_0px,rgb(255,255,255)_100%)] bg-no-repeat bg-size-[100%_2px]   leading-5 bg-[position:left_96%] md:text-[22px] md:leading-[28.6px]"
                         >

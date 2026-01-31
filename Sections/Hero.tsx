@@ -243,13 +243,13 @@ export const Hero = () => {
                                     <h3 className="text-[19.2px] font-bold   tracking-[0.192px] leading-6 md:text-[27.2px] md:tracking-[0.272px] md:leading-[34px]">
                                         <span className="text-[19.2px]   tracking-[0.192px] leading-6 md:text-[27.2px] md:tracking-[0.272px] md:leading-[34px]"></span>
                                         Recognised as a Leading Digital
-                                        Marketing Agency UK Company
+                                        Marketing Agency in Varanasi
                                         <span className="text-[19.2px]   tracking-[0.192px] leading-6 md:text-[27.2px] md:tracking-[0.272px] md:leading-[34px]"></span>
                                     </h3>
                                 </div>
                                 <p className="mb-6">
                                     As a trusted Digital Marketing
-                                    Agency UK Company, Bird has been
+                                    Agency in Varanasi, Digibazzar has been
                                     featured in top-tier media and
                                     industry-leading platforms,
                                     showcasing our expertise in
@@ -325,7 +325,7 @@ export const Hero = () => {
                                 </strong>
                                 for Exceptional{" "}
                                 <strong className="font-bold  ">
-                                    Digital Marketing Agency UK Results
+                                    Digital Marketing Agency Varanasi Results
                                 </strong>
                             </p>
                         </div>

@@ -12,16 +12,16 @@ export const Content = () => {
                                             <div className="  text-left md:text-start">
                                                 <div className="text-[11.25px] flex justify-start leading-[11.25px] text-left mb-6 md:text-[38.4px] md:leading-[38.4px] md:text-start">
                                                     <h2 className="text-[26.4px] font-bold tracking-[-0.264px] leading-[26.4px] max-w-[90%] text-left mb-[7px] md:text-[38.4px] md:tracking-[-0.384px] md:leading-[38.4px] md:text-start">
-                                                        A Leading Full Service Digital Marketing Agency in the UK
+                                                        A Leading Full Service Digital Marketing Agency in India
                                                     </h2>
                                                 </div>
                                                 <div className="  inline-block text-left md:text-start">
                                                     <div className="  text-left md:text-start">
                                                         <p className="text-lg   leading-[30.6px] text-left pb-[27px] md:text-[12.8px] md:leading-[21.76px] md:text-start md:pb-[19.2px]">
-                                                            Bird is a leading Full Service Digital
-                                                            Marketing Agency based in the UK, renowned
+                                                            Digibazzar is a leading Full Service Digital
+                                                            Marketing Agency based in the India, renowned
                                                             for providing the best digital solutions for
-                                                            companies across the UK. Our dynamic digital
+                                                            companies across the India. Our dynamic digital
                                                             marketing agency is distinguished by its
                                                             knack for helping businesses bolster their
                                                             digital presence, utilising cutting-edge
@@ -35,7 +35,7 @@ export const Content = () => {
                                                             maintaining a substantial digital presence
                                                             is indispensable. Businesses across the
                                                             globe are acknowledging the power of the
-                                                            digital world, and Bird’s digital marketing
+                                                            digital world, and Digibazzar’s digital marketing
                                                             services are leading the charge in this
                                                             digital transformation. Our expertise lies
                                                             in amplifying businesses’ digital

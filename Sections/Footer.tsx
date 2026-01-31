@@ -69,7 +69,7 @@ export const Footer = (_props: FooterProps) => {
                             />
                         </motion.a>
                         <p className="text-gray-300 leading-relaxed text-sm">
-                            A multi award winning digital agency based in the United Kingdom. With a distinct offering in Technical Web, Digital Marketing and Creative.
+                            A multi award winning digital agency based in the India. With a distinct offering in Technical Web, Digital Marketing and Creative.
                         </p>
 
                         <div className="pt-4">
@@ -96,15 +96,15 @@ export const Footer = (_props: FooterProps) => {
                     {/* Column 2: London & Careers */}
                     <div className="flex flex-col space-y-12">
                         <div>
-                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">London</h3>
+                            <h3 className="uppercase font-bold mb-4 tracking-wider text-gray-400 text-sm">India</h3>
                             <address className="not-italic text-gray-300 mb-4 text-sm leading-relaxed">
                                 13 Austin Friars,<br />
-                                London,<br />
+                                India,<br />
                                 EC2N 2HE
                             </address>
                             <div className="flex flex-col space-y-1 text-sm">
-                                <a href="tel:+442083381206" className="hover:text-white dark:text-gray-300">+44 208 338 1206</a>
-                                <a href="mailto:london@bird.co.uk" className="hover:text-white dark:text-gray-300 underline">london@bird.co.uk</a>
+                                <a href="tel:+442083381206" className="hover:text-white dark:text-gray-300">+91 7524057749</a>
+                                <a href="mailto:thedigibazzar@gmail.com" className="hover:text-white dark:text-gray-300 underline">thedigibazzar@gmail.com</a>
                             </div>
                         </div>
 
@@ -127,8 +127,8 @@ export const Footer = (_props: FooterProps) => {
                                 CM12 9XE
                             </address>
                             <div className="flex flex-col space-y-1 text-sm">
-                                <a href="tel:+441277286565" className="hover:text-white dark:text-gray-300">+44 1277 286565</a>
-                                <a href="mailto:essex@bird.co.uk" className="hover:text-white dark:text-gray-300 underline">essex@bird.co.uk</a>
+                                <a href="tel:7524057749" className="hover:text-white dark:text-gray-300">+91 7524057749</a>
+                                <a href="mailto:thedigibazzar@gmail.com" className="hover:text-white dark:text-gray-300 underline">thedigibazzar@gmail.com</a>
                             </div>
                         </div>
 
@@ -140,7 +140,7 @@ export const Footer = (_props: FooterProps) => {
                             <div className="flex items-center gap-2 mb-2 text-sm text-gray-300">
                                 <span className="text-amber-300">⏰</span> 09.00 am – 17.00 pm
                             </div>
-                            <a href="mailto:support@bird.co.uk" className="underline hover:text-white text-sm">support@bird.co.uk</a>
+                            <a href="mailto:sthedigibazzar@gmail.com" className="underline hover:text-white text-sm">thedigibazzar@gmail.com</a>
                         </div>
                     </div>
 
@@ -154,8 +154,8 @@ export const Footer = (_props: FooterProps) => {
                                 G41 1JB
                             </address>
                             <div className="flex flex-col space-y-1 text-sm">
-                                <a href="tel:+441414719099" className="hover:text-white dark:text-gray-300">+44 141 471 9099</a>
-                                <a href="mailto:glasgow@bird.co.uk" className="hover:text-white dark:text-gray-300 underline">glasgow@bird.co.uk</a>
+                                <a href="tel:7524057749" className="hover:text-white dark:text-gray-300">+91 7524057749</a>
+                                <a href="mailto:thedigibazzar@gmail.com" className="hover:text-white dark:text-gray-300 underline">thedigibazzar@gmail.com</a>
                             </div>
                         </div>
 
@@ -204,8 +204,8 @@ export const Footer = (_props: FooterProps) => {
 
                     <div className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
                         <div className="mb-4 md:mb-0 text-center md:text-left">
-                            <p>© 2026 Bird Marketing. Bird Marketing Limited - Company No. 08051880 - VAT Reg No. GB204642831</p>
-                            <p className="mt-1">Registered Address: 27 Old Gloucester Street, London, WC1N 3AX, United Kingdom. - <a href="/sitemap/" className="underline hover:text-gray-300">Sitemap</a></p>
+                            <p>© 2026 Digibuzzer Marketing. Digibuzzer Marketing Limited - Company No. 08051880 - VAT Reg No. GB204642831</p>
+                            <p className="mt-1">Registered Address: 27 Old Gloucester Street, Varanasi, Uttar Pradesh, India. - <a href="/sitemap/" className="underline hover:text-gray-300">Sitemap</a></p>
                         </div>
                     </div>
                 </div>

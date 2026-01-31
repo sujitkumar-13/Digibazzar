@@ -24,8 +24,8 @@ export const Industries = () => {
                                     Industries We Work With
                                 </h2>
                                 <p className=" ">
-                                    At Bird, we extend our Digital
-                                    Marketing Agency UK expertise
+                                    At Digibazzar, we extend our Digital
+                                    Marketing Agency in Varanasi expertise
                                     across a diverse range of
                                     industries, tailoring strategies
                                     to meet the unique demands and

@@ -44,7 +44,7 @@ export const Team = () => {
                         </span>
                     </h3>
                     <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl">
-                        Backed by years of experience, our UK team delivers data-driven
+                        Backed by years of experience, our Varanasi team delivers data-driven
                         strategies designed to drive real business growth. We focus on
                         creating impactful solutions that help brands succeed in an
                         ever-evolving digital landscape. Trusted by companies nationwide, we

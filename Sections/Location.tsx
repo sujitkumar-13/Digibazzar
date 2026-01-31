@@ -8,35 +8,37 @@ export const Location = () => {
                     </h3>
                     <p className="">
                         We specialise in providing advanced digital marketing
-                        strategies across the United Kingdom. Seize growth
+                        strategies across the India. Seize growth
                         opportunities with our innovative, location-focused
                         full service digital marketing services in the vibrant
-                        UK online landscape.
+                        India online landscape.
                     </p>
 
                     <div className="relative mb-[50px]">
                         <div className="relative flex flex-wrap  z-10">
                             <div className="relative w-full bg-center mb-[25px] px-[25px] md:w-[33.3333%] md:mb-0">
                                 <h4 className="text-[14.4px] font-bold leading-[18px] mb-2 md:text-base md:leading-5 opacity-70">
-                                    Digital Marketing London
+                                    Digital Marketing Varanasi
                                 </h4>
                                 <p className="">
                                     13 Austin Friars,
                                     <br className="" />
-                                    London, EC2N 2HE
+                                    Varanasi, Uttar Pradesh, 221001
                                     <br className="" />
                                     <a
-                                        href="tel://02083381206"
+                                        href="tel://7524057749"
                                         className="opacity-70"
                                     >
-                                        0208 338 1206
+                                        +91 7524057749
+
                                     </a>
                                     <br className="" />
                                     <a
-                                        href="mailto://london@bird.co.uk"
+                                        href="mailto://thedigibazzar@gmail.com"
                                         className="opacity-70"
                                     >
-                                        london@bird.co.uk
+                                        thedigibazzar@gmail.com
+
                                     </a>
                                 </p>
                             </div>
@@ -51,17 +53,19 @@ export const Location = () => {
                                     Billericay, Essex, CM12 9XE
                                     <br className="" />
                                     <a
-                                        href="tel://01277286565"
+                                        href="tel://7524057749"
                                         className="opacity-70"
                                     >
-                                        01277 286565
+                                        +91 7524057749
+
                                     </a>
                                     <br className="" />
                                     <a
-                                        href="mailto://essex@bird.co.uk"
+                                        href="mailto://thedigibazzar@gmail.com"
                                         className="opacity-70"
                                     >
-                                        essex@bird.co.uk
+                                        thedigibazzar@gmail.com
+
                                     </a>
                                 </p>
 
@@ -77,19 +81,19 @@ export const Location = () => {
                                     Glasgow, G41 1JB
                                     <br className="" />
                                     <a
-                                        href="tel://01414719099"
+                                        href="tel://7524057749"
                                         className="opacity-70"
                                     >
-                                        <span className="">
-                                            0141 471 9099
-                                        </span>
+                                        +91 7524057749
+
                                     </a>
                                     <br className="" />
                                     <a
-                                        href="mailto://glasgow@bird.co.uk"
+                                        href="mailto://thedigibazzar@gmail.com"
                                         className="opacity-70"
                                     >
-                                        glasgow@bird.co.uk
+                                        thedigibazzar@gmail.com
+
                                     </a>
                                 </p>
 

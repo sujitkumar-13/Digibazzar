@@ -17,7 +17,7 @@ export const AdditionalContent = () => {
                                 <span className="text-[19.2px]   tracking-[0.192px] leading-6 md:text-[27.2px] md:tracking-[0.272px] md:leading-[34px]"></span>
                             </h3>
                             <p className="text-lg   leading-[30.6px] pb-[27px] md:text-[12.8px] md:leading-[21.76px] md:pb-[19.2px]">
-                                As a comprehensive digital marketing agency, Bird
+                                As a comprehensive digital marketing agency, Digibazzar
                                 crafts and implements digital solutions that encompass
                                 the full scope of the online world. Rather than
                                 focusing on individual service offerings, our approach
@@ -31,7 +31,7 @@ export const AdditionalContent = () => {
                                 creating bespoke strategies that help businesses shine
                                 in the digital realm. We take pride in facilitating
                                 digital transformations that drive growth, using
-                                progressive techniques that keep our clients at the
+                                progressive techniques that keep clients at the
                                 forefront of digital innovation.
                             </p>
                             <h3 className="text-[19.2px] font-bold   tracking-[0.192px] leading-6 mb-2 md:text-[27.2px] md:tracking-[0.272px] md:leading-[34px]">
@@ -40,7 +40,7 @@ export const AdditionalContent = () => {
                                 <span className="text-[19.2px]   tracking-[0.192px] leading-6 md:text-[27.2px] md:tracking-[0.272px] md:leading-[34px]"></span>
                             </h3>
                             <p className="text-lg   leading-[30.6px] pb-[27px] md:text-[12.8px] md:leading-[21.76px] md:pb-[19.2px]">
-                                Bird serves as a trusted partner in your digital
+                                Digibazzar serves as a trusted partner in your digital
                                 journey, providing the support and guidance businesses
                                 require to navigate the complex and swiftly changing
                                 digital landscape. Our dedication to excellence and a

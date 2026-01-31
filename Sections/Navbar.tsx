@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 export const Navbar = () => {
     const MENU_LINKS = [
         { label: "Home", href: "/" },
-        { label: "About", href: "/about/" },
+        { label: "About", href: "/" },
         { label: "Services", subMenu: true },
         // { label: "Industries", subMenu: true },
         // { label: "Case Studies", href: "/case-studies/" },
         // { label: "Careers", href: "/careers/" },
-        { label: "Blog", href: "/blog/" },
-        { label: "Contact", href: "/contact/" },
+        { label: "Blog", href: "/" },
+        { label: "Contact", href: "/" },
     ];
 
     return (
@@ -54,26 +54,18 @@ export const Navbar = () => {
                 <div className="hidden md:flex items-center space-x-6">
                     <div className="relative">
                         <a
-                            href="/quote/"
+                            href="/"
                             className="bg-amber-400 text-black px-6 py-2 rounded-md text-sm font-bold uppercase hover:bg-amber-500 transition-colors whitespace-nowrap"
                         >
                             Get A Quote
                         </a>
-                    </div>
-                    <div className="flex items-center space-x-2 text-white text-sm font-semibold uppercase cursor-pointer hover:text-amber-300 transition-colors whitespace-nowrap">
-                        <img
-                            src="https://c.animaapp.com/mkz11li0RsXIrT/assets/en.svg"
-                            alt="EN"
-                            className="w-5 h-5"
-                        />
-                        <span>EN (UK)</span>
                     </div>
                 </div>
 
                 {/* MobileMenu */}
                 <div className="flex items-center md:hidden h-full">
                     <a
-                        href="/quote/"
+                        href="/"
                         className="bg-amber-400 text-black px-4 py-2 rounded-md text-xs font-bold uppercase mr-4"
                     >
                         Get A Quote

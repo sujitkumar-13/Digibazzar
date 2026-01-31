@@ -1,26 +1,26 @@
 const BLOG_POSTS = [
     {
         date: "July 8, 2025",
-        title: "The Best SEO Agencies in The UK",
-        href: "/blog/bird-curated-list/best-seo-agencies-uk/",
-        ariaLabel: "The Best SEO Agencies in The UK",
+        title: "The Best SEO Agencies in Varanasi",
+        // href: "/blog/bird-curated-list/best-seo-agencies-uk/",
+        ariaLabel: "The Best SEO Agencies in Varanasi",
     },
     {
         date: "May 21, 2024",
         title: "The Best Graphic Design Software",
-        href: "/blog/bird-curated-list/best-graphic-design-software/",
+        // href: "/blog/bird-curated-list/best-graphic-design-software/",
         ariaLabel: "The Best Graphic Design Software",
     },
     {
         date: "May 15, 2024",
         title: "The Best Keyword Research Tools",
-        href: "/blog/bird-curated-list/best-keyword-research-tools/",
+        // href: "/blog/bird-curated-list/best-keyword-research-tools/",
         ariaLabel: "The Best Keyword Research Tools",
     },
     {
         date: "May 9, 2024",
         title: "The Best Link Building Tools",
-        href: "/blog/bird-curated-list/best-link-building-tools/",
+        // href: "/blog/bird-curated-list/best-link-building-tools/",
         ariaLabel: "The Best Link Building Tools",
     },
 ];
@@ -70,17 +70,16 @@ export const Blog = () => {
 
                                 <div className="flex-1">
                                     <h3 className="text-xl md:text-2xl font-bold group-hover:text-yellow-400 transition-colors leading-snug">
-                                        <a href={post.href}>{post.title}</a>
+                                        <p>{post.title}</p>
                                     </h3>
                                 </div>
 
                                 <div className="md:text-right hidden md:block">
-                                    <a
-                                        href={post.href}
+                                    <p
                                         className="text-xs font-bold tracking-widest uppercase text-gray-500 group-hover:text-white transition-colors"
                                     >
                                         Read More
-                                    </a>
+                                    </p>
                                 </div>
                             </div>
                         ))}
