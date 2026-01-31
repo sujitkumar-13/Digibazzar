@@ -117,45 +117,41 @@ export const Service = () => {
                     <div className="absolute bg-cover h-full w-full left-0 top-0"></div>
                 </div>
             </div>
-            <div className="relative flex flex-wrap z-10">
-                <div className="relative w-full bg-center px-[50px]">
-                    <h2 className="text-[26.4px] font-bold tracking-[-0.264px] leading-[33px] mb-[7px] md:text-[40.8px] md:tracking-[-0.408px] md:leading-[51px]">
+            <div className="relative flex flex-wrap z-10 w-full">
+                <div className="relative w-full bg-center px-6 md:px-10 lg:px-[50px]">
+                    <h2 className="text-3xl md:text-[40.8px] font-bold tracking-tight md:tracking-[-0.408px] leading-tight md:leading-[51px] mb-4 text-center md:text-left">
                         Our Digital Marketing Services
                     </h2>
-                    <p className="pb-6">
+                    <p className="pb-6 text-sm md:text-base text-white/80 text-center md:text-left">
                         In the highly competitive online market, building a digital strategy is crucial to cultivating successful, revenue-driving brand engagements. Digibazzar, a leading award-winning digital marketing agency in the Varanasi, can harness the power of data-driven campaigns and multi-channel outreach to elevate your brand’s presence across the web. Our team of savvy marketing professionals, adept in cutting-edge organic search, social media, and paid advertising, works diligently to refine your brand message, expand reach, and drive measurable growth. By leveraging targeted digital strategies, refining customer journeys, and executing creative campaigns, we empower your brand to rise above the digital noise.
                     </p>
 
-                    <div className="mt-[50px] mb-[60px]  ">
-                        <div className="grid grid-cols-1 md:grid-cols-3">
+                    <div className="mt-8 md:mt-[50px] mb-[60px]">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-white/20">
                             {services.map((service, index) => {
-                                const isLastInRow = (index + 1) % 3 === 0;
-                                const isLastRow = index >= services.length - 3;
-
                                 return (
                                     <div
                                         key={index}
-                                        className={`text-amber-300 block p-[60px] border-white/40 
-                                            ${!isLastInRow ? 'md:border-r' : ''} 
-                                            ${!isLastRow ? 'border-b' : 'max-md:border-b'}
-                                        `}
+                                        className="text-amber-300 block p-8 md:p-10 lg:p-[60px] border-b sm:border-r border-white/20 last:border-b-0 sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0"
                                     >
                                         <img
                                             src={service.icon}
                                             alt={service.title}
-                                            className="h-[65px] w-[65px] mb-10"
+                                            className="h-[45px] md:h-[65px] w-auto mb-6 md:mb-10"
                                         />
-                                        <h3 className="text-white text-[19.2px] font-bold tracking-[0.192px] leading-6 mb-[30px] md:text-[27.2px] md:tracking-[0.272px] md:leading-[34px]">
+                                        <h3 className="text-white text-xl md:text-[27.2px] font-bold tracking-tight md:tracking-[0.272px] leading-tight md:leading-[34px] mb-[20px] md:mb-[30px]">
                                             {service.title}
                                         </h3>
-                                        {service.features.map((feature, fIndex) => (
-                                            <div key={fIndex} className="text-white text-lg gap-x-2.5 flex leading-[25.2px] mb-[15px]">
-                                                <i className="text-amber-300 font-normal block h-[34px] min-w-[30px] text-center align-middle w-[34px] font-icomoon"></i>
-                                                <div>
-                                                    <span className="font-semibold">{feature.title}:</span> {feature.description}
+                                        <div className="space-y-4">
+                                            {service.features.map((feature, fIndex) => (
+                                                <div key={fIndex} className="text-white text-sm md:text-lg flex items-start gap-3 leading-snug md:leading-[25.2px]">
+                                                    <div className="mt-1 h-3 w-3 rounded-full bg-amber-300 flex-shrink-0" title="checkmark"></div>
+                                                    <div>
+                                                        <span className="font-semibold text-amber-300/90">{feature.title}:</span> {feature.description}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
                                     </div>
                                 );
                             })}
